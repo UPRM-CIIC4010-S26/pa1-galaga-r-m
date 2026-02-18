@@ -15,10 +15,22 @@ Program::Program() {
             std::pair<float, float>{600, 150}, 
             new SpEnemy(600, 150)
         });
-
+        //  First, when you run the game, you will quickly notice that something is
+            // wrong; the enemies are being loaded outside of the screen. For this you
+            // will have to see the Program.cpp file and look at the Program() function
+            // where the enemies are being added to the enemies vector; don’t worry,
+            // you don’t need to know about vectors or loops in this project. We will be
+            // particularly looking at the x and y variables; enemies are supposed to be
+            // arranged in three rows of 10 enemies. For reference, i acts as a counter
+            // to repeatedly add enemies to the game and this counter can work in our
+            // favor by adjusting the positions that will be used for enemies; however,
+            // the x variable should be resetting every 10 enemies to start a new
+            // row and the y variable should increase by 50 each time a row is
+            // completed. (Hint: are there any operators that can help update these
+            // values automatically.)
     for (int i = 0; i < 30; i++) {
-        float x = 250 + 50 * i;
-        float y = 200 + 50 * i;
+        float x = 100 + 90 * (i % 10);
+        float y = 350 + 70 * (i / 10);
 
         Enemy::enemies.push_back(std::pair<std::pair<float, float>, Enemy*> {
             std::pair<float, float>{x, y}, 
