@@ -66,9 +66,12 @@ void Program::Update() {
                 lives--;
             }
         }
-
         for (Projectile& p : Projectile::projectiles) { 
             p.update(); 
+            if (p.ID != 0 && HitBox::Collision(player->hitBox, p.getHitBox())) { // check if there is a collision between the player and an enemy projectile
+                PlayerReset(); // reset the player and delete the projectile
+                p.del = true; 
+            }
 
         }
 
@@ -177,7 +180,6 @@ void Program::KeyInputs() {
     if (!startup && !paused && !gameOver && pauseFrames <= 0) player->keyInputs();
    
 }
-
 void Program::PlayerReset() {
     Animation::animations.push_back(
         Animation(player->position.first, player->position.second, 16, 0, 33, 34, 30 ,30, 3, ImageManager::SpriteSheet)
