@@ -35,7 +35,7 @@ void Player::keyInputs() {
     if (IsKeyDown('D') || IsKeyDown(KEY_RIGHT)) this->position.first += this->speed;
     if (IsKeyDown('W') || IsKeyDown(KEY_UP)) this->position.second -= this->speed;
     if (IsKeyDown('S') || IsKeyDown(KEY_DOWN)) this->position.second += this->speed;
-    if (IsKeyPressed(KEY_SPACE)) this->attack();
+    if (IsKeyPressed(KEY_SPACE)|| IsKeyDown(KEY_SPACE)) this->attack();
 }
 
 void Player::attack() {
