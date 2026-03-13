@@ -55,7 +55,7 @@ class Enemy {
                             p2.del = true;
                             if (p.second)   {
                                 if (p.second->health > 0) {
-                                    PlaySound(SoundManager::hit);
+                                    PlaySound(SoundManager::hit); // how i check the sound here for phase 3
                                 
                             }
                         }
