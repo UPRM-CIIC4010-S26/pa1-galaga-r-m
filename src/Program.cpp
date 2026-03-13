@@ -262,7 +262,7 @@ void Program::Reset() {
             std::pair<float, float>{x, y}, 
             new StdEnemy(x, y)
         });
-
+    }}
 void Program::AddScore(int amount) {
     score += amount;
     CheckExtraLife();
@@ -310,5 +310,3 @@ int Program::GetRespawnReset() {
 
     return 1080;
 }        
-}
-}
