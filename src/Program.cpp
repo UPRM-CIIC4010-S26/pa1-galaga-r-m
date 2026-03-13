@@ -111,6 +111,7 @@ void Program::Update() {
                 p.second = nullptr;
             }
         }
+    if (lives <= 0 && pauseFrames <= 0) gameOver = true;
     }
 }
 
@@ -261,7 +262,7 @@ void Program::Reset() {
             std::pair<float, float>{x, y}, 
             new StdEnemy(x, y)
         });
-        
+
 void Program::AddScore(int amount) {
     score += amount;
     CheckExtraLife();
