@@ -4,7 +4,7 @@
 void DyEnemy::draw() {
     if (HitBox::drawHitbox) this->hitBox.draw();
     float y = GetRandomValue(180, 100);// makes the enemy change every frame into new one 
-    DrawTexturePro(ImageManager::SpriteSheet, Rectangle{2, y, 13, 14}, 
+    DrawTexturePro(ImageManager::SpriteSheet, Rectangle{2, y, 13, 14},  
                 Rectangle{this->position.first + 15, this->position.second + 15, 30, 30}, 
                 Vector2{15, 15}, this->aimAngle, WHITE);
 }
